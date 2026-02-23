@@ -2,10 +2,10 @@ import streamlit as st
 from fpdf import FPDF
 
 # Configuração Básica
-st.set_page_config(page_title="IA Adubação PR", page_icon="🌱")
+st.set_page_config(page_title="IA Adubação PR")
 
-# Título Simples
-st.title("🌱 Recomendação de Adubação: Soja (Paraná)")
+# Título
+st.title("Recomendações de Adubação e Calagem)
 
 # --- ENTRADA DE DADOS ---
 with st.container():
@@ -13,16 +13,16 @@ with st.container():
     col1, col2 = st.columns(2)
     
     with col1:
-        produtor = st.text_input("Nome do Produtor", "João Silva")
-        ph = st.number_input("pH em CaCl2", 0.0, 14.0, 5.2)
-        argila = st.number_input("Argila (%)", 0, 100, 45)
-        h_al = st.number_input("H + Al (Acidez Potencial)", 0.0, 20.0, 4.0)
+        produtor = st.text_input("Nome do Produtor")
+        ph = st.number_input("pH em CaCl2", 0.0, 14.0)
+        argila = st.number_input("Argila (%)", 0, 100)
+        h_al = st.number_input("H + Al (Acidez Potencial)", 0.0, 20.0)
         
     with col2:
-        ca = st.number_input("Cálcio (Ca)", 0.0, 20.0, 3.0)
-        mg = st.number_input("Magnésio (Mg)", 0.0, 10.0, 1.2)
-        k = st.number_input("Potássio (K)", 0.0, 2.0, 0.2)
-        prnt = st.number_input("PRNT do Calcário (%)", 1, 100, 80)
+        ca = st.number_input("Cálcio (Ca)", 0.0, 20.0)
+        mg = st.number_input("Magnésio (Mg)", 0.0, 10.0)
+        k = st.number_input("Potássio (K)", 0.0, 2.0)
+        prnt = st.number_input("PRNT do Calcário (%)", 1, 100)
 
 # --- CÁLCULOS ---
 sb = ca + mg + k
